@@ -1,4 +1,4 @@
-# assessment3
+# DegenToken
 
 This program contains a smart contract which creates a token on a local HardHat network, and then used Remix IDE to interact with it.
 
