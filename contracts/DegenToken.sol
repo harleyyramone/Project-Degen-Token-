@@ -4,8 +4,7 @@ pragma solidity ^0.8.18;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "hardhat/console.sol";
+
 
 contract DegenToken is ERC20, Ownable {
 
@@ -19,9 +18,9 @@ contract DegenToken is ERC20, Ownable {
 
     constructor() ERC20("Degen", "DGN") {
         items[1] = Item("Sword NFT", 1000);
-        items[2] = Item("Clothes NFT", 500);
-        items[3] = Item("Shield NFT", 500);
-        items[4] = Item("Shoes NFT", 500);
+        items[2] = Item("Costume NFT", 500);
+        items[3] = Item("Shoes NFT", 500);
+        items[4] = Item("Shield NFT", 500);
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
@@ -49,7 +48,7 @@ contract DegenToken is ERC20, Ownable {
     }
 
     function showStore() external pure returns (string memory) {
-        return "1. Sword NFT(1000 tokens) 2. Clothes NFT(500 tokens) 3. Shield NFT(500 tokens) 4. Shoes NFT(500 tokens)";
+        return "1. Sword NFT(1000 tokens) 2. Costume NFT(500 tokens) 3. Shoes NFT(500 tokens) 4. Shield NFT(500 tokens)";
     }
 
     function getRedeemedItems(address user, uint256 item) external view returns (uint256) {
