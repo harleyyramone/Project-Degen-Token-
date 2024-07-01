@@ -97,10 +97,10 @@ redeemedItems tracks the number of each item redeemed by each user. The outer ma
 
 ```solidity
 constructor() ERC20("Degen", "DGN") {
-    items[1] = Item("Pokemon Rayquaza NFT", 1000);
-    items[2] = Item("Pokemon Sceptile NFT", 500);
-    items[3] = Item("Pokemon Kyogre NFT", 500);
-    items[4] = Item("Pokemon Reshiram NFT", 500);
+    items[1] = Item("Sword NFT", 1000);
+    items[2] = Item("Costume NFT", 500);
+    items[3] = Item("Shoes NFT", 500);
+    items[4] = Item("Shield NFT", 500);
 }
 
   
@@ -153,7 +153,7 @@ This function allows users to redeem an item using their tokens. It checks if th
 
 ```solidity
 function showStore() external pure returns (string memory) {
-    return "1. Pokemon Rayquaza NFT(1000 tokens) 2. Pokemon Sceptile NFT(500 tokens) 3. Pokemon Kyogre NFT(500 tokens) 4. Pokemon Reshiram NFT(500 tokens)";
+    return "1. Sword NFT(1000 tokens) 2. Costume NFT(500 tokens) 3. Shoes NFT(500 tokens) 4. Shield NFT(500 tokens)";
 }  
 ```
 This function returns a string listing all the items available in the store and their respective token costs.
