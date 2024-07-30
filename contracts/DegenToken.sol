@@ -30,11 +30,11 @@ contract DegenToken is ERC20, Ownable, ERC20Burnable {
     // Redeeming tokens for items
     function redeemItem(uint256 itemId) external {
         uint256[] memory itemCosts = new uint256[](5);
-        itemCosts[0] = 20 * 10**decimals(); // Item 1: 20 tokens
-        itemCosts[1] = 15 * 10**decimals(); // Item 2: 15 tokens
-        itemCosts[2] = 10 * 10**decimals(); // Item 3: 10 tokens
-        itemCosts[3] = 8 * 10**decimals();  // Item 4: 8 tokens
-        itemCosts[4] = 5 * 10**decimals();  // Item 5: 5 tokens
+        itemCosts[0] = 20; // Item 1: 20 tokens
+        itemCosts[1] = 15; // Item 2: 15 tokens
+        itemCosts[2] = 10; // Item 3: 10 tokens
+        itemCosts[3] = 8;  // Item 4: 8 tokens
+        itemCosts[4] = 5;  // Item 5: 5 tokens
 
         require(itemId > 0 && itemId <= itemCosts.length, "Invalid item ID");
         uint256 cost = itemCosts[itemId - 1];
@@ -59,5 +59,9 @@ contract DegenToken is ERC20, Ownable, ERC20Burnable {
     // List of redeemable items
     function listItems() external pure returns (string memory) {
         return "Available Items:\n1. Degen Hoodie\n2. Degen Cap\n3. Degen Notebook\n4. Degen Water Bottle\n5. Degen Keychain";
+    }
+
+      function decimals() override public pure returns (uint8) {
+        return 0;
     }
 }
